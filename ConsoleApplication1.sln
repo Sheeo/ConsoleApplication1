@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tss.ConsoleApp", "ConsoleApplication1\Tss.ConsoleApp.csproj", "{3E4A073B-36F2-4C32-ABF1-FEA417F0DC86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tss.ConsoleApp", "Tss.ConsoleApp\Tss.ConsoleApp.csproj", "{3E4A073B-36F2-4C32-ABF1-FEA417F0DC86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tss.HexagonMapping", "Tss.Mapping\Tss.HexagonMapping.csproj", "{5B93818F-D701-48F3-99FC-5340A5EFDCDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tss.HexagonMapping", "Tss.HexagonMapping\Tss.HexagonMapping.csproj", "{5B93818F-D701-48F3-99FC-5340A5EFDCDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tss.GameComponents", "GameComponents\Tss.GameComponents.csproj", "{A9544783-0F7F-4055-BBE8-AAB19BEA221E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tss.GameComponents", "Tss.GameComponents\Tss.GameComponents.csproj", "{A9544783-0F7F-4055-BBE8-AAB19BEA221E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

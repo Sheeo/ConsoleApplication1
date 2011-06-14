@@ -47,11 +47,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GameComponents\Tss.GameComponents.csproj">
+    <ProjectReference Include="..\Tss.GameComponents\Tss.GameComponents.csproj">
       <Project>{A9544783-0F7F-4055-BBE8-AAB19BEA221E}</Project>
       <Name>Tss.GameComponents</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tss.Mapping\Tss.HexagonMapping.csproj">
+    <ProjectReference Include="..\Tss.HexagonMapping\Tss.HexagonMapping.csproj">
       <Project>{5B93818F-D701-48F3-99FC-5340A5EFDCDC}</Project>
       <Name>Tss.HexagonMapping</Name>
     </ProjectReference>
