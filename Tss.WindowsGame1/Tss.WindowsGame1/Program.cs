@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using NLog;
 using NLog.Config;
 using NLog.Targets;
@@ -20,6 +21,7 @@ namespace Tss.WindowsGame1
             }
         }
 
+        [Conditional("DEBUG")]
         private static void setupLogging()
         {
             var conf = new LoggingConfiguration();
