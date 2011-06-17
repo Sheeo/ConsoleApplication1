@@ -20,39 +20,14 @@ namespace Tss.GameComponents.Basic
             MoveDistance = moveDistance;
         }
 
-        public HashSet<Tile> availableTiles()
+        public List<Tile> AvailableTiles()
         {
-           
-            var set = new HashSet<Tile>(); 
-            set.Add(Position);
-
-            var result = new HashSet<Tile>(); 
-
-            return AvailableTilesRecursive(set, MoveDistance, result);
-        }
-
-        private HashSet<Tile> AvailableTilesRecursive(HashSet<Tile> set, int distance, HashSet<Tile> result)
-        {
-            //base case
-            if (distance == 0)
-                return result;
-
-            //recursive case
-            var newSet = new HashSet<Tile>();
-
-            foreach (Tile t in set)
-                foreach (Tile ti in t.GetNeighbours())
-                {
-                    newSet.Add(ti);
-                    result.Add(ti);
-                }
-
-            return AvailableTilesRecursive(newSet, distance - 1, result);
+            return Position.GetNeighbours(MoveDistance);
         }
 
         public Boolean MoveTo(Tile destination)
         {
-            if (availableTiles().Contains(destination))
+            if (AvailableTiles().Contains(destination))
             {
                 Position = destination;
                 return true;

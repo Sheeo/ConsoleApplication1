@@ -21,17 +21,17 @@ namespace Tss.GameComponents.Structures
     }
     public class City
     {
-        private int X { get; set; }
-        private int Y { get; set; }
+        public Corner Position {get; private set;}
         private GameMap Map;
+        public int Reach { get; private set; }
 
         private IDictionary<Resources, int> resources;
 
         public City(int x, int y, GameMap map)
         {
+            Reach = 1;
             resources = new SelfPrintingDictionary<Resources, int>();
-            X = x;
-            Y = y;
+            Position = new Corner(x, y, Map);
             Map = map;
         }
 
@@ -45,12 +45,16 @@ namespace Tss.GameComponents.Structures
 
         public void CollectResources()
         {
-            Map.CornerMap.GetAdjacentTiles(X, Y).ForEach(t => AddResources(Map.getResource(t), 1));
+            foreach (Tile t in Position.GetAdjacentTiles())
+            {
+                Console.WriteLine(t);
+            }
+            Position.GetAdjacentTiles(Reach).ForEach(t => AddResources(Map.getResource(t), 1));
         }
 
         public override string ToString()
         {
-            return String.Format("<City> x: {0} y: {1}, ressources: {2}", X,Y,resources.ToString());
+            return String.Format("<City> x: {0} y: {1}, ressources: {2}", Position.X,Position.Y,resources.ToString());
         }
     }
 }

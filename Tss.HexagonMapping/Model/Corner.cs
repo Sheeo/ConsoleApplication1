@@ -9,23 +9,34 @@ namespace Tss.HexagonMapping.Model
     {
         public int X { get; private set; }
         public int Y { get; private set; }
-        private TileMap Map;
+        private readonly TileMap map;
 
         public Corner(int x, int y, TileMap map): this()
         {
             X = x;
             Y = y;
-            Map = map;
+            this.map = map;
         }
 
         public List<Corner> GetNeighbours()
         {
-            return Map.CornerMap.GetNeighbours(this);
+            return map.CornerMap.GetNeighbours(this);
         }
 
         public List<Tile> GetAdjacentTiles()
         {
-            return Map.CornerMap.GetAdjacentTiles(this);
+            return map.CornerMap.GetAdjacentTiles(this);
+        }
+
+        public List<Tile> GetAdjacentTiles(int reach)
+        {
+
+            var set = new HashSet<Tile>();
+            foreach (Tile t in GetAdjacentTiles())
+            {
+                set.Add(t);
+            }
+            return map.getAdjacentTiles(set, reach);
         }
 
         public override string ToString()

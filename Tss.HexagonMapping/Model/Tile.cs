@@ -28,6 +28,16 @@ namespace Tss.HexagonMapping.Model
             return Map.GetNeighbours(this);
         }
 
+        public List<Tile> GetNeighbours(int reach)
+        {
+
+            var set = new HashSet<Tile>();
+            set.Add(this);
+            return Map.getAdjacentTiles(set, reach);
+        }
+
+
+
         public override string ToString()
         {
             return String.Format("<Tile> x: {0} y: {1}", X, Y);
