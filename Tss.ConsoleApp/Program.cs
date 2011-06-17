@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Diagnostics;
 using Tss.HexagonMapping.Model;
 using Tss.GameComponents.Structures;
 using Tss.GameComponents.Maps;
-using Tss.GameComponents.Units;
 
-namespace ConsoleApplication1
+namespace Tss.ConsoleApplication1
 {
     class Program
     {

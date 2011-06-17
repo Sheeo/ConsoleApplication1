@@ -8,8 +8,8 @@
     <ProjectGuid>{5B93818F-D701-48F3-99FC-5340A5EFDCDC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tss.Mapping</RootNamespace>
-    <AssemblyName>Tss.Mapping</AssemblyName>
+    <RootNamespace>Tss.HexagonMapping</RootNamespace>
+    <AssemblyName>Tss.HexagonMapping</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
