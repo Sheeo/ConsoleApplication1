@@ -7,14 +7,14 @@ using Tss.GameComponents.Basic;
 
 namespace Tss.GameComponents.Structures
 {
-    class SelfPrintingDictionary<Tkey, Tvalue> : Dictionary<Tkey, Tvalue>
+    class SelfPrintingDictionary<TKey, TValue> : Dictionary<TKey, TValue>
     {
         public override string ToString()
         {
-            StringBuilder b = new StringBuilder();
+            var b = new StringBuilder();
             foreach (var k in this.Keys)
             {
-                b.Append(k.ToString() + ": " + this[k] .ToString() + ", ");
+                b.Append(k + ": " + this[k] + ", ");
             }
             return b.ToString();
         }
@@ -22,17 +22,17 @@ namespace Tss.GameComponents.Structures
     public class City
     {
         public Corner Position {get; private set;}
-        private GameMap Map;
+        private readonly GameMap map;
         public int Reach { get; private set; }
 
-        private IDictionary<Resources, int> resources;
+        private readonly IDictionary<Resources, int> resources;
 
         public City(int x, int y, GameMap map)
         {
             Reach = 1;
             resources = new SelfPrintingDictionary<Resources, int>();
-            Position = new Corner(x, y, Map);
-            Map = map;
+            this.map = map;
+            Position = new Corner(x, y, map);
         }
 
         public void AddResources(Resources resource, int amount)
@@ -49,7 +49,7 @@ namespace Tss.GameComponents.Structures
             {
                 Console.WriteLine(t);
             }
-            Position.GetAdjacentTiles(Reach).ForEach(t => AddResources(Map.getResource(t), 1));
+            Position.GetAdjacentTiles(Reach).ForEach(t => AddResources(map.getResource(t), 1));
         }
 
         public override string ToString()
