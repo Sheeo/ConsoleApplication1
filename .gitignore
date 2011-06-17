@@ -7,6 +7,9 @@ _ReSharper*
 bin
 obj
 
+# Solution user object files
+*.suo
+
 # mstest test results
 TestResults
 *.swp
