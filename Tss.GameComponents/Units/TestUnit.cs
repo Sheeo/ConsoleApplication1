@@ -8,6 +8,6 @@ namespace Tss.GameComponents.Units
 {
     public class TestUnit : GameUnit
     {
-        public TestUnit(int x, int y, GameMap map) : base(x, y, map, 2) { }
+        public TestUnit(int x, int y, GameMap map) : base(x, y, map, 3) { }
     }
 }

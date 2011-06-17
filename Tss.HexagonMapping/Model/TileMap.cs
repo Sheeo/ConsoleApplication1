@@ -94,6 +94,40 @@ namespace Tss.HexagonMapping.Model
         {
             return String.Format("<TileMap> width: {0}, height: {1})", Width, Height);
         }
+
+        public List<Tile> getAdjacentTiles(HashSet<Tile> start, int reach)
+        {
+            var result = new HashSet<Tile>();
+            
+            foreach (Tile t in start)
+                result.Add(t);
+
+            var actualResult = new List<Tile>();
+            foreach (Tile t in GetAdjacentTilesRecursive(start, reach, result))
+            {
+                actualResult.Add(t);
+            }
+            return actualResult;
+        }
+
+        private HashSet<Tile> GetAdjacentTilesRecursive(HashSet<Tile> set, int reach, HashSet<Tile> result)
+        {
+            //base case
+            if (reach == 0)
+                return result;
+
+            //recursive case
+            var newSet = new HashSet<Tile>();
+
+            foreach (Tile t in set)
+                foreach (Tile ti in t.GetNeighbours())
+                {
+                    newSet.Add(ti);
+                    result.Add(ti);
+                }
+
+            return GetAdjacentTilesRecursive(newSet, reach - 1, result);
+        }
         
     }
 }
